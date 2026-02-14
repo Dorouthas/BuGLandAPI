@@ -91,9 +91,9 @@ public class PlayerGameStateData
         }
         
         //便捷方法: 获取玩家总胜率
-        public double GetWinRate()
+        public string GetWinRate()
         {
                 double winRate = TotalGame > 0 ? (double)TotalWin / TotalGame * 100 : 0;
-                return winRate;
+                return $"{winRate:F2}%";
         }
 }
