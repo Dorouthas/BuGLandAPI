@@ -57,7 +57,9 @@ public class ApiClient
         {
             var request = new HttpRequestMessage(HttpMethod.Post, _apiUrl + endpoint);
             var jsonBody = JsonSerializer.Serialize(requestBody, Options);
+#if DEBUG
             Console.WriteLine($"JsonBody:{jsonBody}");
+#endif
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("Authorization", "Bearer " + _token);
             request.Content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
