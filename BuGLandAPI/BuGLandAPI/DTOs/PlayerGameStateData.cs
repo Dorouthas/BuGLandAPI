@@ -72,7 +72,7 @@ public class PlayerGameStateData
         }
         
         //便捷方法: 获取玩家对应游戏胜率
-        public string GetTotalWinRate(GameType gameTypeKey)
+        public string GetWinRate(GameType gameTypeKey)
         {
                 var gameData = GetGameData(gameTypeKey);
                 if (gameData == null) return "0.00%";
@@ -91,7 +91,7 @@ public class PlayerGameStateData
         }
         
         //便捷方法: 获取玩家总胜率
-        public string GetWinRate()
+        public string GetTotalWinRate()
         {
                 double winRate = TotalGame > 0 ? (double)TotalWin / TotalGame * 100 : 0;
                 return $"{winRate:F2}%";
